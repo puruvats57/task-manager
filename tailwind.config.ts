@@ -3,11 +3,30 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./src/**/*.{js,jsx,ts,tsx}",
     "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx,html}",
+  ],
+  safelist: [
+    // Dynamic icon colors
+    "text-primary/40",
+    "text-success/40",
+    "text-accent/40",
+    // Comprehensive patterns for all utility classes
+    {
+      pattern: /^(bg|text|border|ring)-(primary|success|accent|muted|foreground|background|card|border|destructive|secondary|task-completed|task-completed-text)(-\d+|\/\d+)?$/,
+      variants: ["hover", "focus", "active", "dark"],
+    },
+    {
+      pattern: /^(opacity|scale|translate|rotate|shadow|backdrop-blur|animate|transition|duration|ease)-.*$/,
+      variants: ["hover", "focus", "active", "dark"],
+    },
+    {
+      pattern: /^(w|h|p|m|gap|space|rounded|border|shadow|flex|grid|items|justify|text|font|leading|tracking)-.*$/,
+    },
+    // Ensure all custom animations are included
+    "animate-fade-in",
+    "animate-scale-in",
+    "animate-shimmer",
   ],
   prefix: "",
   theme: {

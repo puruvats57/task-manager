@@ -1,0 +1,39 @@
+[1mdiff --git a/tailwind.config.ts b/tailwind.config.ts[m
+[1mindex c7a54c9..5360532 100644[m
+[1m--- a/tailwind.config.ts[m
+[1m+++ b/tailwind.config.ts[m
+[36m@@ -3,11 +3,30 @@[m [mimport type { Config } from "tailwindcss";[m
+ export default {[m
+   darkMode: ["class"],[m
+   content: [[m
+[31m-    "./pages/**/*.{js,jsx,ts,tsx}",[m
+[31m-    "./components/**/*.{js,jsx,ts,tsx}",[m
+[31m-    "./app/**/*.{js,jsx,ts,tsx}",[m
+[31m-    "./src/**/*.{js,jsx,ts,tsx}",[m
+     "./index.html",[m
+[32m+[m[32m    "./src/**/*.{js,jsx,ts,tsx,html}",[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  safelist: [[m
+[32m+[m[32m    // Dynamic icon colors[m
+[32m+[m[32m    "text-primary/40",[m
+[32m+[m[32m    "text-success/40",[m
+[32m+[m[32m    "text-accent/40",[m
+[32m+[m[32m    // Comprehensive patterns for all utility classes[m
+[32m+[m[32m    {[m
+[32m+[m[32m      pattern: /^(bg|text|border|ring)-(primary|success|accent|muted|foreground|background|card|border|destructive|secondary|task-completed|task-completed-text)(-\d+|\/\d+)?$/,[m
+[32m+[m[32m      variants: ["hover", "focus", "active", "dark"],[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      pattern: /^(opacity|scale|translate|rotate|shadow|backdrop-blur|animate|transition|duration|ease)-.*$/,[m
+[32m+[m[32m      variants: ["hover", "focus", "active", "dark"],[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      pattern: /^(w|h|p|m|gap|space|rounded|border|shadow|flex|grid|items|justify|text|font|leading|tracking)-.*$/,[m
+[32m+[m[32m    },[m
+[32m+[m[32m    // Ensure all custom animations are included[m
+[32m+[m[32m    "animate-fade-in",[m
+[32m+[m[32m    "animate-scale-in",[m
+[32m+[m[32m    "animate-shimmer",[m
+   ],[m
+   prefix: "",[m
+   theme: {[m

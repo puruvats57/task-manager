@@ -26,28 +26,28 @@ export const FilterButtons = React.memo(() => {
   const counts = getCounts();
 
   return (
-    <div className="flex gap-6 flex-wrap justify-center">
+    <div className="flex gap-2 flex-wrap justify-center">
       {filters.map(({ value, label, icon: Icon }) => (
         <Button
           key={value}
           variant={filter === value ? 'default' : 'outline'}
           onClick={() => setFilter(value)}
           className={cn(
-            "h-14 px-8 rounded-lg font-semibold transition-all duration-200 relative overflow-hidden text-lg",
+            "h-9 px-4 rounded-md font-medium transition-all duration-200 relative overflow-hidden text-sm",
             "hover:scale-105 active:scale-95",
             filter === value 
-              ? "bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/30 border-0" 
-              : "bg-background/50 backdrop-blur-sm border-2 border-border/50 hover:border-primary/50 hover:bg-background/80"
+              ? "bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground shadow-sm shadow-primary/25 hover:shadow-md hover:shadow-primary/30 border-0" 
+              : "bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 hover:bg-background/80"
           )}
         >
-          <span className="relative z-10 flex items-center gap-3">
+          <span className="relative z-10 flex items-center gap-2">
             <Icon className={cn(
-              "w-6 h-6 transition-all",
+              "w-4 h-4 transition-all",
               filter === value ? "text-primary-foreground" : "text-muted-foreground"
-            )} strokeWidth={2.5} />
+            )} strokeWidth={2} />
             <span>{label}</span>
             <span className={cn(
-              "px-4 py-1.5 rounded-full text-base font-semibold transition-all min-w-[32px] text-center",
+              "px-2 py-0.5 rounded-full text-xs font-semibold transition-all min-w-[20px] text-center",
               filter === value
                 ? "bg-primary-foreground/20 text-primary-foreground"
                 : "bg-muted text-muted-foreground"
